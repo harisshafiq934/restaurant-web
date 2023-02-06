@@ -1,0 +1,21 @@
+
+
+
+{
+  "name": "project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "frontend": "cd food-ordering-ui && npm start",
+    "backend": "cd food-ordering-backend && npm start",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "devDependencies": {}
+}
