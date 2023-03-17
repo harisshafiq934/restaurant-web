@@ -1,55 +1,15 @@
-// const express = require ('express')
-// const router = express.Router()
-// const { v4: uuidv4 } = require("uuid");
-// const stripe = require('stripe')('sk_test_51MOdoIIqZWT7PwSEh1XbuOsSt7WCAu58sGC7VkmgmfREzqa8GVicKR5Tu2QnD5MhsBllSmjEDEypnQXctC0fg95j00KLL5CPrR')
 
-// router.post("/placeorder", async(req, res) => {
-//     const {token, subTotal,currentUser,cartItems} =  req.body
-//     try{
-//         const customer =await stripe.customers.create({
-//             email:token.email,
-//             source:token.id,
-//         })
-//         const payment = await stripe.charges.create({
-//             amount:subTotal = 100,
-//             currency:'pkr' ,
-//             customer:customer.id,
-//             receipt_email:token.email
-//         },{
-//             idempotencyKey: uuidv4(),
-//         })
-
-//         if(payment){
-//             res.send('payment success')
-
-//         }else{
-//             res.send('payment failed')
-//         }
-//     } catch (error){
-//         res.status(400).json({
-//             message:'something went wrong',
-//             error:error.stack
-//         });
-//     }
-// })
-
-
-// module.exports= router 
-
-
-
-
-
-
-
-
-
+ require ("dotenv").config();
 const express = require("express");
+
 const router = express.Router();
+
+
 const { v4: uuidv4 } = require("uuid");
 const stripe = require("stripe")(
-  "sk_test_51MOdoIIqZWT7PwSEh1XbuOsSt7WCAu58sGC7VkmgmfREzqa8GVicKR5Tu2QnD5MhsBllSmjEDEypnQXctC0fg95j00KLL5CPrR"
+  process.env.stripe_api
 );
+
 const Order = require("../models/orderModel");
 
 router.post("/placeorder", async (req, res) => {

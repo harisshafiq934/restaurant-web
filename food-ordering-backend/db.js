@@ -1,8 +1,9 @@
+require ("dotenv").config();
 const mongoose = require ("mongoose")
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect("mongodb+srv://dbuser:abna.vt63cnM4y7@cluster0.fubsiuz.mongodb.net/food-app" , {useUnifiedTopology:true, useNewUrlParser:true})
+mongoose.connect(process.env.db_key, {useUnifiedTopology:true, useNewUrlParser:true})
 
 
  var db = mongoose.connection

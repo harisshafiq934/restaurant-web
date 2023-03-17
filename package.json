@@ -1,6 +1,3 @@
-
-
-
 {
   "name": "project",
   "version": "1.0.0",
@@ -10,12 +7,13 @@
     "frontend": "cd food-ordering-ui && npm start",
     "backend": "cd food-ordering-backend && npm start",
     "dev": "concurrently \"npm run frontend\" \"npm run backend\""
+    
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "build": "^0.1.4",
     "concurrently": "^7.6.0"
-  },
-  "devDependencies": {}
+  }
 }
