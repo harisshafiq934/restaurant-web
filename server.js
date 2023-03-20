@@ -16,9 +16,9 @@ app.use('/api/users', require("./routes/userRoute"));
 app.use('/api/orders', require("./routes/orderRoute"));
 
 //static
-app.use(express.static(path.join(__dirname, '../food-ordering-ui/build')))
+app.use(express.static(path.join(__dirname, './food-ordering-ui/build')))
 app.get('*', function(req, res){
-    res.sendFile(path.join(__dirname, '../food-ordering-ui/build/index.html'))
+    res.sendFile(path.join(__dirname, './food-ordering-ui/build/index.html'))
 })
 const port = process.env.PORT || 5000;
 app.listen(port, () => "ok ki report");
